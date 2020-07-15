@@ -1,15 +1,21 @@
 name: Node.js
 
 on:
+  push:
+    branches:
+      - fix-ci
   schedule:
     - cron: '0 6 * * 1-5'
 
 jobs:
   run:
-    if: github.event_name == 'schedule'
+    #    if: github.event_name == 'schedule'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+
+      - name: Install xvfb
+        run: sudo apt-get install xvfb
 
       - uses: actions/cache@v2
         with:
@@ -27,7 +33,8 @@ jobs:
         run: npm ci
 
       - name: Run
-        run: npm start
+        run: xvfb-run npm start
         env:
+          CHROMIUM_HEADLESS: 1
           MICROSOFT_EMAIL: ${{ secrets.MICROSOFT_EMAIL }}
           MICROSOFT_PASSWORD: ${{ secrets.MICROSOFT_PASSWORD }}
