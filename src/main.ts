@@ -21,7 +21,7 @@ import { Authenticator } from './authenticator';
   }
 
   const chromium = new Chromium();
-  const page = await chromium.launch(!!env['CHROMIUM_HEADFUL']);
+  const page = await chromium.launch(!env['CHROMIUM_HEADFUL']);
 
   // Clears LocalStorage to reset answer
   console.log('Clearing Local Storage');
