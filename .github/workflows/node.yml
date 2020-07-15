@@ -1,9 +1,6 @@
 name: Node.js
 
 on:
-  push:
-    branches:
-      - fix-ci
   schedule:
     - cron: '0 21 * * 0-4'
 
