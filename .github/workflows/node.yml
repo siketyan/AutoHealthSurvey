@@ -5,7 +5,7 @@ on:
     branches:
       - fix-ci
   schedule:
-    - cron: '0 6 * * 1-5'
+    - cron: '0 21 * * 0-4'
 
 jobs:
   run:
