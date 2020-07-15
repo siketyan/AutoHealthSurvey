@@ -1,0 +1,41 @@
+name: Node.js
+
+on:
+  push:
+  schedule:
+    - cron: '0 6 * * 1-5'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Use Node.js v14
+        uses: actions/setup-node@v1
+        with:
+          node-version: 14.x
+
+      - name: Install dependencies
+        run: npm ci
+
+      - uses: actions/upload-artifact@v2
+        with:
+          name: app
+          path: .
+
+  run:
+    needs: build
+    if: github.event_name == 'schedule'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v2
+        with:
+          name: app
+          path: .
+
+      - name: Run
+        run: npm start
+        env:
+          MICROSOFT_EMAIL: ${{ secrets.MICROSOFT_EMAIL }}
+          MICROSOFT_PASSWORD: ${{ secrets.MICROSOFT_PASSWORD }}
