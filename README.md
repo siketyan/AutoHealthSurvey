@@ -8,3 +8,9 @@ Reports your health to your work or school automatically via Microsoft Forms.
 1. Edit `.github/workflows/node.yml` to set when to run.
 1. Set your Microsoft (365) account email to `MICROSOFT_EMAIL`, your password to `MICROSOFT_PASSWORD` secrets.
 1. Done!
+
+## Troubleshooting
+If the timeout error occurs at clearing Local Storage, try to use virtual or real X display with headful mode.
+```console
+$ CHROMIUM_HEADFUL=1 npm start
+```
