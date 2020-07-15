@@ -1,0 +1,16 @@
+version: 1
+
+url: https://forms.office.com/Pages/ResponsePage.aspx?id=XYP-cpVeEkWK4KezivJfyMh6mdFa-OFBkHsyBFa3fSVUODFSWUZGUU1TSzFGWVFFOE1MSjI1NkhOViQlQCN0PWcu
+answers:
+  - generator: random
+    options:
+      min: 35
+      max: 36
+
+  - generator: constant
+    options:
+      value: 'ない'
+
+  - generator: constant
+    options:
+      value: '登校しない'
