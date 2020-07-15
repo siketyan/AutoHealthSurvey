@@ -9,6 +9,6 @@ export class RandomGenerator implements IGenerator<Options, number> {
   readonly type = 'random';
 
   generate(options: Options): number {
-    return Math.floor(Math.random() * (options.max - options.min)) + options.min;
+    return Math.round(Math.random() * (options.max - options.min)) + options.min;
   }
 }
