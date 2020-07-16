@@ -1,6 +1,6 @@
 {
   "name": "auto-health-survey",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Reports your health automatically via Microsoft Forms.",
   "author": "Naoki Ikeguchi <root@siketyan.dev>",
   "homepage": "https://github.com/Siketyan/AutoHealthSurvey#readme",
