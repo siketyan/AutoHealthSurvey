@@ -1,4 +1,4 @@
-import { cwd, env } from 'process';
+import { cwd, exit, env } from 'process';
 
 import { Chromium } from './chromium';
 import { Answer } from './config';
@@ -77,5 +77,8 @@ import { Authenticator } from './authenticator';
 
   await page.browser().close();
 })()
-  .catch(console.error)
+  .catch(error => {
+    console.error(error);
+    exit(1);
+  })
 ;
