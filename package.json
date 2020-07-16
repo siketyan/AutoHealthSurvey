@@ -18,8 +18,7 @@
     "url": "https://github.com/Siketyan/AutoHealthSurvey/issues"
   },
   "scripts": {
-    "start": "ts-node ./src/main.ts",
-    "build": "esbuild --bundle --outfile=./index.js --platform=node --minify --sourcemap --external:puppeteer ./src/main.ts"
+    "start": "ts-node ./src/main.ts"
   },
   "dependencies": {
     "js-yaml": "^3.14.0",
