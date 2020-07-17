@@ -30,7 +30,11 @@ jobs:
         run: npm ci
 
       - name: Run
-        run: xvfb-run npm start
+        run: |
+          for try in {1..10}; do
+            xvfb-run npm start && break
+            sleep 30
+          done
         env:
           CHROMIUM_HEADFUL: 1
           MICROSOFT_EMAIL: ${{ secrets.MICROSOFT_EMAIL }}
