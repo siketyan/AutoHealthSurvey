@@ -2,7 +2,7 @@ name: Node.js
 
 on:
   schedule:
-    - cron: '0 21 * * 0-4'
+    - cron: '0 21 * * *'
 
 jobs:
   run:
