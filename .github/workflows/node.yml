@@ -2,6 +2,8 @@ name: Node.js
 
 on:
   schedule:
+    # Warning: The time notation must be UTC timezone based.
+    #          So this schedule will be triggered at 06:00 JST.
     - cron: '0 21 * * *'
 
 jobs:
