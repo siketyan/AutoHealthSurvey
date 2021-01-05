@@ -6,6 +6,7 @@ answers:
     options:
       min: 35
       max: 36
+      decimal: 1
 
   - generator: constant
     options:
